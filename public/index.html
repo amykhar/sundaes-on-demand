@@ -35,9 +35,12 @@
             src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
             crossorigin></script>
 
-    <script>const Alert = ReactBootstrap.Alert;</script>
+    <script>
+      import * as ReactBootstrap from "bootstrap";
+
+      const Alert = ReactBootstrap.Alert;</script>
   </head>
-  <body>
+  <body style="background-color: teal; color:white;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
