@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Popover } from "react-bootstrap";
 
 import { Button } from "../../components/Button";
 import { ConfirmCheckbox } from "../../components/ConfirmCheckbox";
@@ -17,11 +18,16 @@ export function SummaryForm() {
   };
   return (
     <form>
-      <Button isDisabled={isDisabled} />
-      <ConfirmCheckbox
-        checkboxHandler={checkboxHandler}
-        isChecked={isChecked}
-      />
+      <div>
+        <Button isDisabled={isDisabled} />
+      </div>
+      <div>
+        <ConfirmCheckbox
+          checkboxHandler={checkboxHandler}
+          isChecked={isChecked}
+        />
+      </div>
+      <Popover />
     </form>
   );
 }

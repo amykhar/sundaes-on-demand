@@ -1,9 +1,9 @@
 import "./App.css";
 
-import logo from "./logo.svg";
+import { OrderSummary } from "./pages/summary/OrderSummary";
 
 function App() {
-  return <div />;
+  return <OrderSummary />;
 }
 
 export default App;
