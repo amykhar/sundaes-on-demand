@@ -1,13 +1,22 @@
-export function ConfirmCheckbox({ isChecked, checkboxHandler }) {
+import { Form, OverlayTrigger } from "react-bootstrap";
+
+export function ConfirmCheckbox({ isChecked, checkboxHandler, popover }) {
+  const label = (
+    <OverlayTrigger
+      trigger={["hover", "focus"]}
+      placement="right"
+      overlay={popover}
+    >
+      <Form.Label>I agree to Terms and Conditions</Form.Label>
+    </OverlayTrigger>
+  );
   return (
-    <label htmlFor="confirmCheckbox">
-      <input
-        type="checkbox"
-        id="confirmCheckbox"
-        checked={isChecked}
-        onChange={checkboxHandler}
-      />
-      I agree to <span>Terms and Conditions</span>
-    </label>
+    <Form.Check
+      type="checkbox"
+      id="confirmCheckbox"
+      checked={isChecked}
+      onChange={checkboxHandler}
+      label={label}
+    />
   );
 }

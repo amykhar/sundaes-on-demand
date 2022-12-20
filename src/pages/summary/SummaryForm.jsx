@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Popover } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 
-import { Button } from "../../components/Button";
+import { ConfirmButton } from "../../components/ConfirmButton";
 import { ConfirmCheckbox } from "../../components/ConfirmCheckbox";
+import TermsPopover from "../../components/TermsPopover";
 
 export function SummaryForm() {
   const [isChecked, setIsChecked] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
+  const popover = TermsPopover();
 
   const checkboxHandler = (e) => {
     setIsChecked(e.target.checked);
@@ -17,17 +19,13 @@ export function SummaryForm() {
     }
   };
   return (
-    <form>
-      <div>
-        <Button isDisabled={isDisabled} />
-      </div>
-      <div>
-        <ConfirmCheckbox
-          checkboxHandler={checkboxHandler}
-          isChecked={isChecked}
-        />
-      </div>
-      <Popover />
-    </form>
+    <Form>
+      <ConfirmCheckbox
+        checkboxHandler={checkboxHandler}
+        isChecked={isChecked}
+        popover={popover}
+      />
+      <ConfirmButton isDisabled={isDisabled} />
+    </Form>
   );
 }
